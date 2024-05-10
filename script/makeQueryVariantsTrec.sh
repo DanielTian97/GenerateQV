@@ -1,8 +1,8 @@
 #!/bin/bash
 
-cd ../
+#cd ../
 
-stopFilePath="./ingredients/smart-stopwords"
+stopFilePath="../ingredients/smart-stopwords"
 if [ ! -f $stopFilePath ]
 then
     echo "Please ensure that the path of the stopword-list-file is set in the .sh file."
@@ -89,4 +89,5 @@ EOL
 
 
 #java -Xmx1g -cp $CLASSPATH:dist/NeuralModelQpp.jar neuralqpp.GenerateQueryVariantsTrec $prop_name
+cd ../
 mvn exec:java -Dexec.mainClass="neuralqpp.GenerateQueryVariantsTrec" -Dexec.args="$prop_name"
