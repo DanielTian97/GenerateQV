@@ -203,10 +203,9 @@ public class CreateIndexTrec678r{
 //            System.out.println("Usage: java knrm.CreateIndexTrec678r <collection-path> <dump-file-path>");
 //            exit(0);
 //        }
-        args = new String[2];
-        args[0] = "/store/collection/trec678rb/documents/";
-//        args[0] = "/home/suchana/NetBeansProjects/NeuralModelQpp/test_data/foo_collection/";
-        args[1] = "/home/suchana/NetBeansProjects/NeuralModelQpp/test_data/trec678_docidanalyze_index_1/";
+//        args = new String[2];
+//        args[0] = "/store/collection/trec678rb/documents/";
+//        args[1] = "/home/suchana/NetBeansProjects/NeuralModelQpp/test_data/trec678_docidanalyze_index_1/";
         
         collectionPath = args[0];
         indexPath = args[1];
