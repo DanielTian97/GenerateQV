@@ -9,6 +9,7 @@ then
 else
     echo "Using stopFilePath: "$stopFilePath
 fi
+stopFilePath="./ingredients/smart-stopwords"
 
 if [ $# -le 5 ] 
 then
