@@ -25,10 +25,10 @@ then
     exit 1;
 fi
 
-indexPath=`realPath -s $1`              # absolute address of the index
+indexPath=`realpath -s $1`              # absolute address of the index
 indexpath=$indexPath"/"
-queryPath=`realPath -s $2`		# absolute address of the query file
-resPath=`realPath -s $3`		# absolute directory path of the .res file
+queryPath=`realpath -s $2`		# absolute address of the query file
+resPath=`realpath -s $3`		# absolute directory path of the .res file
 resPath=$resPath"/"
 queryName=$(basename $queryPath)
 qtermNN=$5
