@@ -52,7 +52,7 @@ public class CreateIndexTrec678r{
 
         this.collectionPath = collectionPath;
         this.indexPath = indexPath; 
-        stopWordPath = "/home/suchana/smart-stopwords";
+        stopWordPath = "../ingredients/smart-stopwords";
         
         //for using default stopwordlist
 //        analyzer = new EnglishAnalyzer();                                       //org.apache.lucene.analysis.en.EnglishAnalyzer; this uses default stopword list
