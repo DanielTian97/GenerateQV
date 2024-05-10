@@ -2,7 +2,7 @@
 
 cd ../
 
-stopFilePath="../ingredients/smart-stopwords"
+stopFilePath="./ingredients/smart-stopwords"
 if [ ! -f $stopFilePath ]
 then
     echo "Please ensure that the path of the stopword-list-file is set in the .sh file."
