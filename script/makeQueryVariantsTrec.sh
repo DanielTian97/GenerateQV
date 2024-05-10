@@ -88,4 +88,5 @@ EOL
 # .properties file made
 
 
-java -Xmx1g -cp $CLASSPATH:dist/NeuralModelQpp.jar neuralqpp.GenerateQueryVariantsTrec $prop_name
+#java -Xmx1g -cp $CLASSPATH:dist/NeuralModelQpp.jar neuralqpp.GenerateQueryVariantsTrec $prop_name
+mvn exec:java -Dexec.mainClass="neuralqpp.GenerateQueryVariantsTrec" -Dexec.args="$prop_name"
