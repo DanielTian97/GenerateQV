@@ -35,7 +35,7 @@ numFeedbackDocs=$6
 variantGenerate=$7
 variantLength=$8
 
-prop_name="generateQueryVariants-"$queryName".properties"
+prop_name="generateQueryVariants-"$queryPath".properties"
 
 echo "Using index at: "$indexPath
 echo "Using query at: "$queryPath
