@@ -152,7 +152,7 @@ public class GenerateQueryVariantsTrec {
         qvwv = new CreateQueryVariantsW2V(this);
         
         /* setting res path */
-        setRunName_ResFileName();
+//        setRunName_ResFileName();
         resFileWriter = new FileWriter(resPath.trim());
         System.out.println("Result will be stored in: "+resPath);
         /* res path set */     
@@ -242,7 +242,7 @@ public class GenerateQueryVariantsTrec {
             // System.out.println("\n" + query.qid +": Initial query: " + luceneQuery.toString(fieldToSearch));
             
             /* initial retrieval performed */
-            indexSearcher.search(luceneQuery, collector);
+//            indexSearcher.search(luceneQuery, collector);
             topRetDocs = collector.topDocs();
             hits = topRetDocs.scoreDocs;
             if(hits == null){
