@@ -108,11 +108,11 @@ public class GenerateQueryVariantsTrec {
         if (null != prop.getProperty("param2"))
             param2 = Float.parseFloat(prop.getProperty("param2"));
 
-        /* setting indexReader and indexSearcher */
-        indexReader = DirectoryReader.open(FSDirectory.open(indexFile.toPath()));
-        indexSearcher = new IndexSearcher(indexReader);
-        setSimilarityFunction(simFuncChoice, param1, param2);
-        /* indexReader and searcher set */
+//        /* setting indexReader and indexSearcher */
+//        indexReader = DirectoryReader.open(FSDirectory.open(indexFile.toPath()));
+//        indexSearcher = new IndexSearcher(indexReader);
+//        setSimilarityFunction(simFuncChoice, param1, param2);
+//        /* indexReader and searcher set */
 
         /* setting query path */
         queryPath = prop.getProperty("queryPath");
@@ -272,17 +272,17 @@ public class GenerateQueryVariantsTrec {
 //            resFileWriter.close();
             
             switch(varGen.toLowerCase()) {
-                case "rlm":
-                    System.out.println("Generate variants using - RLM");
-                    resBuffer = new StringBuffer();
-                    queryVariantList = qvrlm.createVariantsRLMTrec(topRetDocs, luceneQuery, varLen);
-//                    resBuffer.append(query.qid).append(" ::: ").append(luceneQuery.toString(fieldToSearch)).append("\n");
-                    for (String variant : queryVariantList)
-                        resBuffer.append(query).append("\t"). // now query is a string
-                                append(variant).append("\n");
-                    resFileWriter.write(resBuffer.toString());
-                    resFileWriter.close();
-                    break;
+//                case "rlm":
+//                    System.out.println("Generate variants using - RLM");
+//                    resBuffer = new StringBuffer();
+//                    queryVariantList = qvrlm.createVariantsRLMTrec(topRetDocs, luceneQuery, varLen);
+////                    resBuffer.append(query.qid).append(" ::: ").append(luceneQuery.toString(fieldToSearch)).append("\n");
+//                    for (String variant : queryVariantList)
+//                        resBuffer.append(query).append("\t"). // now query is a string
+//                                append(variant).append("\n");
+//                    resFileWriter.write(resBuffer.toString());
+//                    resFileWriter.close();
+//                    break;
                 case "w2v":
                     System.out.println("Generate variants using - W2V");
                     resBuffer = new StringBuffer();
