@@ -209,8 +209,8 @@ public class GenerateQueryVariantsTrec {
      */
     private void setRunName_ResFileName() {
         
-        Similarity s = indexSearcher.getSimilarity(true);
-        runName = queryFile.getName() + "-" + s.toString() + "-TD" + numFeedbackDocs + "-" + varGen.toUpperCase();
+//        Similarity s = indexSearcher.getSimilarity(true);
+        runName = queryFile.getName() + "-" + "no similarity" + "-TD" + numFeedbackDocs + "-" + varGen.toUpperCase(); // s.toString()
         runName = runName.replace(" ", "").replace("(", "").replace(")", "").replace("00000", "");
 
         if(null == prop.getProperty("resPath"))
