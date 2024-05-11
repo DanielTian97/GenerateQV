@@ -148,7 +148,7 @@ public class GenerateQueryVariantsTrec {
         varLen = Integer.parseInt(prop.getProperty("variantLength"));
         System.out.println("Maximum length of a query variant : " + varLen);
         
-        qvrlm = new CreateQueryVariantsRLM(this);
+//        qvrlm = new CreateQueryVariantsRLM(this);
         qvwv = new CreateQueryVariantsW2V(this);
         
         /* setting res path */
