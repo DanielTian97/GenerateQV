@@ -112,7 +112,16 @@
                                 <goal>java</goal>
                             </goals>
                             <configuration>
-                                <mainClass>org.neuralqpp.GenerateQueryVariants</mainClass>
+                                <mainClass>org.neuralqpp.GenerateQueryVariantsTrec</mainClass>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>Indexing</id>
+                            <goals>
+                                <goal>java</goal>
+                            </goals>
+                            <configuration>
+                                <mainClass>org.knrm.CreateIndexTrec678r</mainClass>
                             </configuration>
                         </execution>
                     </executions>
