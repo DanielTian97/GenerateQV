@@ -119,6 +119,10 @@ public class CreateQueryVariantsW2V {
                         
                 selectTerm = qtermChoice;
                 NNList = qterm_NN_map.get(selectTerm);
+                if(NNList == null) {
+                    itr--;
+                    continue;
+                }
                 while (count < qTerms.length) {
                     rand = new Random();
                     choice = rand.nextInt(NNList.length);
