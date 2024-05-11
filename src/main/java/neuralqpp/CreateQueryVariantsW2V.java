@@ -129,7 +129,7 @@ public class CreateQueryVariantsW2V {
                     choice = rand.nextInt(NNList.length);
                     System.out.println("roulette : " + choice);
                     selectTerm = NNList[choice];
-                    System.out.println("selected substituion : " + selectTerm);
+                    System.out.println("selected substituion : " + selectTerm + " for : " + qtermChoice);
                     if (!qtermChoice.contains(selectTerm)) {
                         qtermChoice = qtermChoice + " " + selectTerm;
                         System.out.println("new query : " + qtermChoice + "\n");
