@@ -288,6 +288,9 @@ public class GenerateQueryVariantsTrec {
                     resBuffer = new StringBuffer();
                     queryVariantList = qvwv.createVariantsW2VTrec(luceneQuery, varLen);
 //                    resBuffer.append(query.qid).append(" ::: ").append(luceneQuery.toString(fieldToSearch)).append("\n");
+                    if(queryVariantList.size() == 0) {
+                        continue;
+                    }
                     for (String variant : queryVariantList)
                         resBuffer.append(query).append("\t"). // now query is a string
                                 append(variant).append("\n");

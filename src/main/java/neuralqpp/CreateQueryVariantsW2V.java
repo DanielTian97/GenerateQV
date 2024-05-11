@@ -109,6 +109,9 @@ public class CreateQueryVariantsW2V {
                 hasNNTermsArrayList.add(qTerm);
             }
             String[] hasNNTerms = hasNNTermsArrayList.toArray(new String[hasNNTermsArrayList.size()]);
+            if (hasNNTerms.length == 0) {
+                return variantListPerQuery;
+            }
 
             int count = 1;
             rand = new Random();
