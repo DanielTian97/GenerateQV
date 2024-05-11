@@ -95,23 +95,33 @@ public class CreateQueryVariantsW2V {
         System.out.println("size of the Nearest Neighbour matrix : " + qterm_NN_map.size());
         
         /*  Roulette Wheel selection for query term substitution */
-        String qTerms [] = luceneQuery.toString(fieldToSearch).split(" ");
+        String[] qTerms = luceneQuery.toString(fieldToSearch).split(" ");
         
         /* event-1 : choose which qterm to substitute (equally likely to choose any term) */
         for (int itr=0; itr < 30; itr++) {
-            
+
+            ArrayList<String> hasNNTermsArrayList = new ArrayList<String>();
+            for (String qTerm : qTerms) {
+                NNList = qterm_NN_map.get(qTerm);
+                if(NNList == null) {
+                    continue;
+                }
+                hasNNTermsArrayList.add(qTerm);
+            }
+            String[] hasNNTerms = hasNNTermsArrayList.toArray(new String[hasNNTermsArrayList.size()]);
+
             int count = 1;
-            rand = new Random(); 
-            choice = rand.nextInt(qTerms.length);
-            qtermChoice = qTerms[choice];
+            rand = new Random();
+            choice = rand.nextInt(hasNNTerms.length);
+            qtermChoice = hasNNTerms[choice];
             matcher = pattern.matcher(qtermChoice);
             
             /* random no. generation and select the fittest candidate */
-            if (qTerms.length > 1) {
+            if (hasNNTerms.length > 1) {
                 while (matcher.matches() || qtermChoice.contains(".")) {
                     rand = new Random();
-                    choice = rand.nextInt(qTerms.length);
-                    qtermChoice = qTerms[choice]; 
+                    choice = rand.nextInt(hasNNTerms.length);
+                    qtermChoice = hasNNTerms[choice];
                     matcher = pattern.matcher(qtermChoice);
                     System.out.println("Qterm selected for substitution : " + qtermChoice);
                 } 
@@ -119,12 +129,7 @@ public class CreateQueryVariantsW2V {
                         
                 selectTerm = qtermChoice;
                 NNList = qterm_NN_map.get(selectTerm);
-                if(NNList == null) {
-                    System.out.println(selectTerm);
-                    itr--;
-                    continue;
-                }
-                while (count < qTerms.length) {
+                while (count < varLen) {
                     rand = new Random();
                     choice = rand.nextInt(NNList.length);
                     System.out.println("roulette : " + choice);
@@ -141,7 +146,7 @@ public class CreateQueryVariantsW2V {
             else {
                 selectTerm = qtermChoice;
                 NNList = qterm_NN_map.get(selectTerm);
-                while (count <= qTerms.length) {
+                while (count <= varLen) {
                     rand = new Random();
                     choice = rand.nextInt(NNList.length);
                     System.out.println("roulette_here : " + choice);
