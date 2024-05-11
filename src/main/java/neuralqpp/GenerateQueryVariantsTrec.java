@@ -152,7 +152,7 @@ public class GenerateQueryVariantsTrec {
         qvwv = new CreateQueryVariantsW2V(this);
         
         /* setting res path */
-//        setRunName_ResFileName();
+        setRunName_ResFileName();
         resFileWriter = new FileWriter(resPath.trim());
         System.out.println("Result will be stored in: "+resPath);
         /* res path set */     
