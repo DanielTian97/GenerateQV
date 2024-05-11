@@ -2,14 +2,13 @@
 
 #cd ../
 
-stopFilePath="../ingredients/smart-stopwords"
+stopFilePath="./ingredients/smart-stopwords"
 if [ ! -f $stopFilePath ]
 then
     echo "Please ensure that the path of the stopword-list-file is set in the .sh file."
 else
     echo "Using stopFilePath: "$stopFilePath
 fi
-stopFilePath="./ingredients/smart-stopwords"
 
 if [ $# -le 5 ] 
 then
@@ -25,10 +24,10 @@ then
     exit 1;
 fi
 
-indexPath=`readlink -s $1`              # absolute address of the index
+indexPath=`readlink -f $1`              # absolute address of the index
 indexpath=$indexPath"/"
-queryPath=`readlink -s $2`		# absolute address of the query file
-resPath=`readlink -s $3`		# absolute directory path of the .res file
+queryPath=`readlink -f $2`		# absolute address of the query file
+resPath=`readlink -f $3`		# absolute directory path of the .res file
 resPath=$resPath"/"
 queryName=$(basename $queryPath)
 qtermNN=$5
@@ -36,7 +35,7 @@ numFeedbackDocs=$6
 variantGenerate=$7
 variantLength=$8
 
-prop_name="generateQueryVariants-"$queryPath".properties"
+prop_name="./generateQueryVariants-"$queryName".properties"
 
 echo "Using index at: "$indexPath
 echo "Using query at: "$queryPath

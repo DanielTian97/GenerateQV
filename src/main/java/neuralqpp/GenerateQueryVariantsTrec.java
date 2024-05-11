@@ -319,7 +319,7 @@ public class GenerateQueryVariantsTrec {
             args[0] = "generateQueryVariants-query.xml.properties";
             System.exit(1);
         }
-        prop.load(new FileReader("./script/" + args[0]));
+        prop.load(new FileReader(args[0]));
         GenerateQueryVariantsTrec gqv = new GenerateQueryVariantsTrec(prop);
 
         gqv.makeQueryVariants();         
