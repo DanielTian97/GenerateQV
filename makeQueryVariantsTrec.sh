@@ -25,10 +25,10 @@ then
     exit 1;
 fi
 
-indexPath=`realpath -s $1`              # absolute address of the index
+indexPath=`readlink -s $1`              # absolute address of the index
 indexpath=$indexPath"/"
-queryPath=`realpath -s $2`		# absolute address of the query file
-resPath=`realpath -s $3`		# absolute directory path of the .res file
+queryPath=`readlink -s $2`		# absolute address of the query file
+resPath=`readlink -s $3`		# absolute directory path of the .res file
 resPath=$resPath"/"
 queryName=$(basename $queryPath)
 qtermNN=$5
@@ -90,5 +90,5 @@ EOL
 
 
 #java -Xmx1g -cp $CLASSPATH:dist/NeuralModelQpp.jar neuralqpp.GenerateQueryVariantsTrec $prop_name
-cd ../
+#cd ../
 mvn exec:java -Dexec.mainClass="neuralqpp.GenerateQueryVariantsTrec" -Dexec.args="$prop_name"
